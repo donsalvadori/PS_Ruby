@@ -39,3 +39,5 @@ if __FILE__ == $0
   player.hurt
   puts player.health
 end
+
+#test
