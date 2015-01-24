@@ -20,7 +20,7 @@ class Player
 	end
 
 	def strong?
-		true
+		@health > 100
 	end
 
 	def hurt
