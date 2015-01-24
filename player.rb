@@ -19,6 +19,10 @@ class Player
 		"I'm #{@name} with a health of #{@health} and a score of #{score}."
 	end
 
+	def strong?
+		true
+	end
+
 	def hurt
 		@health -= 10
 		puts "#{@name} got hurt!"
