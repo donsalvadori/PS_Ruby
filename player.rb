@@ -11,6 +11,11 @@ class Player
 		@health + @name.length
 	end
 
+
+  def <=>(other)
+    other.score <=> score
+  end
+
 	def name=(new_name)
   	@name = new_name.capitalize
 	end

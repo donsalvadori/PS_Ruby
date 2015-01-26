@@ -30,6 +30,13 @@ class Game
   	wimpy_players.each do |p|
     	puts "#{p.name} (#{p.health})"
   	end
+
+		puts "\n#{@title} High Scores:"
+
+		@players.sort.each do |p|
+  		formatted_name = p.name.ljust(20, '.')
+  		puts "#{formatted_name} #{player.score}"
+		end
 	end
 
 	def play(rounds)
