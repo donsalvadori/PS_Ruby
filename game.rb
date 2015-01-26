@@ -14,6 +14,10 @@ class Game
 		@players << a_player
 	end
 
+	def print_stats
+		strong_players, wimpy_players = @players.partition { |player| player.strong? }
+	end
+
 	def play(rounds)
 		puts "There are #{@players.size} players in #{@title}"
 		@players.each do |p|
