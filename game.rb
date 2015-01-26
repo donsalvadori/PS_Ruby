@@ -14,15 +14,18 @@ class Game
 		@players << a_player
 	end
 
-	def play
+	def play(rounds)
 		puts "There are #{@players.size} players in #{@title}"
 		@players.each do |p|
 			puts p
 		end
 
-		@players.each do |p|
-			GameTurn.take_turn(p)
-			puts p
+		1.upto(rounds) do |round|
+			puts "\nRound #{round}:"
+			@players.each do |p|
+				GameTurn.take_turn(p)
+				puts p
+			end
 		end
 	end
 end
