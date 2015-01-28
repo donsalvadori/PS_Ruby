@@ -5,6 +5,7 @@ class Player
 	def initialize(name, health=100)
 		@name = name.capitalize
 		@health = health
+		@found_treasures = Hash.new(0)
 	end
 
 	def score
