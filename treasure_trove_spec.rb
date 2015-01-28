@@ -51,3 +51,5 @@ describe TreasureTrove do
   expect(TreasureTrove::TREASURES).to include(treasure)
   end
 end
+
+#trash comment to delete later
