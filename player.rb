@@ -16,8 +16,12 @@ class Player
 
 	def found_treasure(treasure)
 		@found_treasures[treasure.name] += treasure.points
+		puts "#{@name} found a #{treasure.name} worth #{treasure.points} points."
+		puts "#{@name}'s treasures: #{@found_treasures}"
+	end
 
-		puts "\n #{@name} found a #{treasure.name} worth #{treasure.value} points."
+	def points
+		@found_treasures.values.reduce(0, :+)
 	end
 
 
