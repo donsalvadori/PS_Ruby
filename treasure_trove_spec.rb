@@ -52,4 +52,3 @@ describe TreasureTrove do
   end
 end
 
-#trash comment to delete later
