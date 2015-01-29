@@ -35,9 +35,9 @@ class Game
     	print_name_and_health(p)
   	end
 
-  	@players.sort.each do |player|
-  		puts "\n#{player.name}'s point totals:"
-  		player.each_found_treasure do |treasure|
+  	@players.sort.each do |p|
+  		puts "\n#{p.name}'s point totals:"
+  		p.each_found_treasure do |treasure|
     		puts "#{treasure.points} total #{treasure.name} points"
   		end
   		puts "#{p.points} grand total points"
@@ -51,23 +51,29 @@ class Game
 	end
 
 	def play(rounds)
-		puts "There are #{@players.size} players in #{@title}"
-		@players.each do |p|
-			puts p
-		end
-
-		treasures = TreasureTrove::TREASURES
-
-		puts "\nThere are #{treasures.size} treasures to be found:"
-		treasures.each do |treasure|
-  		puts "A #{treasure.name} is worth #{treasure.points} points"
-		end
-
 		1.upto(rounds) do |round|
-			puts "\nRound #{round}:"
+			if block_given?
+				break if yield
+  		end
+
+			puts "There are #{@players.size} players in #{@title}"
 			@players.each do |p|
-				GameTurn.take_turn(p)
 				puts p
+			end
+
+			treasures = TreasureTrove::TREASURES
+
+			puts "\nThere are #{treasures.size} treasures to be found:"
+			treasures.each do |treasure|
+	  		puts "A #{treasure.name} is worth #{treasure.points} points"
+			end
+
+			1.upto(rounds) do |round|
+				puts "\nRound #{round}:"
+				@players.each do |p|
+					GameTurn.take_turn(p)
+					puts p
+				end
 			end
 		end
 	end
