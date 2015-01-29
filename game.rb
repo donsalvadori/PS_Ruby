@@ -35,11 +35,13 @@ class Game
     	print_name_and_health(p)
   	end
 
-  	@players.each do |p|
-  		puts "\n#{p.name}'s point totals:"
+  	@players.sort.each do |player|
+  		puts "\n#{player.name}'s point totals:"
+  		player.each_found_treasure do |treasure|
+    		puts "#{treasure.points} total #{treasure.name} points"
+  		end
   		puts "#{p.points} grand total points"
-		end
-
+  	end
 
 		puts "\n#{@title} High Scores:"
 		@players.sort.each do |p|
