@@ -27,7 +27,8 @@ class Player
 
 	def each_found_treasure
    @found_treasures.each do |name, points|
-     yield Treasure.new(name, points)
+   	next_treasure = Treasure.new (name, points)
+    yield next_treasure
   	end
   end
 

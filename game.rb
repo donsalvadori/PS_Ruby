@@ -12,6 +12,9 @@ class Game
 		@players = []
 	end
 
+	def total_points
+		@players.reduce(0) {|sum, p| sum + p.points}
+
 	def add_player (a_player)
 		@players << a_player
 	end
@@ -24,7 +27,7 @@ class Game
 	def load_players(from_file)
 	  CSV.foreach(from_file) do |row|
 	    player = Player.new(row[0], row[1].to_i)
-	    add_player(player)
+	    add_player(player) 
 	  end
 	end
 
