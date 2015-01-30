@@ -16,7 +16,6 @@ class BerserkPlayer < Player
 	  puts "#{@name} is berserk!" if berserk?
 	end
 
-
 	def hurt
 	  if berserk?
 	    heal
@@ -24,8 +23,6 @@ class BerserkPlayer < Player
 	    super
 	  end
 	end
-
-
 
 end
 
