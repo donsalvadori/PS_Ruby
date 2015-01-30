@@ -23,6 +23,12 @@ class Game
 	  end
 	end
 
+	def save_high_scores(to_file="high_scores.txt")
+	  File.open(to_file, "w") do |file|
+	    file.puts "#{@title} High Scores:"
+	  end
+	end
+
 	def print_name_and_health(player)
   	puts "#{player.name} (#{player.health})"
 	end
