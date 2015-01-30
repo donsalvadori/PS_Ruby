@@ -14,3 +14,7 @@ knuckleheads.play(2)
 
 knuckleheads.print_stats
 
+loop do
+  puts "\nHow many game rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+end
