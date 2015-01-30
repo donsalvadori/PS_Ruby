@@ -10,10 +10,8 @@ knuckleheads.load_players(ARGV.shift || "players.csv")
 # knuckleheads.add_player(player1)
 # knuckleheads.add_player(player2)
 # knuckleheads.add_player(player3)
-knuckleheads.play(2)
+#knuckleheads.play(2)
 
-
-knuckleheads.print_stats
 
 loop do
   puts "\nHow many game rounds? ('quit' to exit)"
@@ -23,6 +21,7 @@ loop do
   	knuckleheads.play(answer.to_i)
   when 'quit', 'exit'
   	knuckleheads.print_stats
+  	knuckleheads.save_high_scores
   	break
   else
   	puts "Please enter a number or 'quit'"
